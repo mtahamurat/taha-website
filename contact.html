@@ -1,0 +1,234 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>İletişim - Taha</title>
+
+  <!-- Font Awesome (ikonlar) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root{
+      --bg:#0a192f; --card:#112240; --panel:#0f223e;
+      --text:#ccd6f6; --muted:#8892b0; --accent:#64ffda; --line:rgba(100,255,218,.12);
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:Arial, sans-serif; background:var(--bg); color:var(--text); line-height:1.6}
+    a{color:var(--accent); text-decoration:none; transition:color .3s}
+    a:hover{color:#fff}
+
+    /* Navbar */
+    .navbar{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:25px 40px; background:#0a192f; position:sticky; top:0; z-index:20;
+      border-bottom:1px solid var(--line);
+    }
+    .logo{font-weight:700; font-size:1.1rem; color:var(--accent); letter-spacing:.3px; cursor:pointer; transition:opacity .3s}
+    .logo:hover{opacity:.85}
+    .menu{display:flex; gap:30px}
+    .menu a{color:#ccd6f6; font-weight:500; font-size:16px}
+    .menu a:hover{color:var(--accent)}
+
+    /* Hero */
+    .hero{text-align:center; padding:72px 20px 36px}
+    .hero h1{font-size:2.2rem; margin:0 0 10px; color:var(--accent)}
+    .hero p{max-width:760px; margin:0 auto; color:var(--muted); font-size:1.05rem}
+
+    /* İçerik 2 kolon */
+    .wrap{
+      max-width:1100px; margin:36px auto 70px; padding:0 20px;
+      display:grid; grid-template-columns:1fr 1fr; gap:32px;
+    }
+    @media (max-width:900px){ .wrap{grid-template-columns:1fr} }
+
+    .card{
+      background:var(--card); border:1px solid var(--line); border-radius:12px; padding:22px;
+      box-shadow:0 6px 18px rgba(0,0,0,.25);
+    }
+
+    /* Sol: iletişim kutuları */
+    .info{display:grid; grid-template-columns:1fr; gap:16px}
+    .info-item{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:16px}
+    .info h3{margin:0 0 6px; color:var(--accent); font-size:1.05rem}
+    .info p{margin:0; color:#a8b2d1; font-size:.96rem}
+    .inline{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:8px}
+
+    /* Butonlar */
+    .btn{
+      border:1px solid var(--accent); color:var(--accent); background:transparent; padding:10px 16px; border-radius:8px;
+      font-size:.95rem; cursor:pointer; transition:all .25s; display:inline-flex; align-items:center; gap:8px;
+    }
+    .btn:hover{background:var(--accent); color:#0a192f}
+    .btn i{margin-right:4px}
+
+    /* Marka renkleri */
+    .btn--github   { border-color:#c9d1d9; color:#c9d1d9; }
+    .btn--github:hover   { background:#c9d1d9; color:#0a192f; }
+    .btn--linkedin { border-color:#0a66c2; color:#0a66c2; }
+    .btn--linkedin:hover { background:#0a66c2; color:#fff; }
+    .btn--whatsapp { border-color:#25D366; color:#25D366; }
+    .btn--whatsapp:hover { background:#25D366; color:#0a192f; }
+    .btn--instagram{ border-color:#e1306c; color:#e1306c; }
+    .btn--instagram:hover{ background:#e1306c; color:#fff; }
+
+    /* Form */
+    .form label{display:block; font-size:.95rem; color:#a8b2d1; margin-bottom:6px}
+    .input, .textarea{
+      width:100%; background:#0f223e; color:var(--text); border:1px solid var(--line);
+      border-radius:10px; padding:12px 14px; outline:none; transition:border-color .2s;
+    }
+    .input:focus, .textarea:focus{border-color:var(--accent)}
+    .textarea{min-height:140px; resize:vertical}
+    .row{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+    @media (max-width:600px){ .row{grid-template-columns:1fr} }
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+
+    /* Toast */
+    .toast{
+      position:fixed; left:50%; bottom:24px; transform:translateX(-50%);
+      background:#0f223e; color:var(--text); border:1px solid var(--line);
+      padding:10px 14px; border-radius:10px; opacity:0; pointer-events:none; transition:opacity .3s;
+    }
+    .toast.show{opacity:1}
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><strong>Web Designer & Developer</strong></div>
+    <div class="menu">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="projects.html">Projeler</a>
+      <a href="hakkimda.html">Hakkımda</a>
+      <a href="contact.html">İletişim</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>İletişim</h1>
+    <p>Projeniz için hızlı bir teklif almak veya aklınızdaki fikri konuşmak isterseniz formu doldurun ya da e-posta gönderin.</p>
+  </section>
+
+  <!-- İçerik -->
+  <section class="wrap">
+    <!-- Sol panel -->
+    <div class="card info">
+      <!-- E-posta -->
+      <div class="info-item">
+        <h3>E-posta</h3>
+        <p id="emailText">m.taha.murat@gmail.com</p>
+        <div class="inline">
+          <a href="mailto:m.taha.murat@gmail.com" class="btn"><i class="fa-regular fa-envelope"></i>E-posta Gönder</a>
+          <button class="btn" id="copyBtn" data-copy="#emailText"><i class="fa-regular fa-copy"></i>Kopyala</button>
+        </div>
+      </div>
+
+      <!-- Konum -->
+      <div class="info-item">
+        <h3>Konum</h3>
+        <p>Türkiye • Uzaktan çalışma</p>
+      </div>
+
+      <!-- Sosyal -->
+      <div class="info-item">
+        <h3>Sosyal</h3>
+        <p>GitHub, LinkedIn, WhatsApp, Instagram</p>
+        <div class="inline">
+          <a class="btn btn--github"   href="https://github.com/mtahamurat"           target="_blank" rel="noopener"><i class="fab fa-github"></i>GitHub</a>
+          <a class="btn btn--linkedin" href="https://www.linkedin.com/in/mtahamurat"  target="_blank" rel="noopener"><i class="fab fa-linkedin"></i>LinkedIn</a>
+          <!-- Numaranı 905xxxxxxxxx formatında yaz -->
+          <a class="btn btn--whatsapp" href="https://wa.me/905425647866"              target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+          <a class="btn btn--instagram"href="https://instagram.com/mtahamurat"        target="_blank" rel="noopener"><i class="fab fa-instagram"></i>Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sağ panel: Form -->
+    <div class="card form">
+      <div class="row">
+        <div>
+          <label for="name">Ad Soyad</label>
+          <input id="name" class="input" type="text" placeholder="Adınız"/>
+        </div>
+        <div>
+          <label for="email">E-posta</label>
+          <input id="email" class="input" type="email" placeholder="mail@ornek.com"/>
+        </div>
+      </div>
+
+      <div style="margin-top:14px">
+        <label for="subject">Konu</label>
+        <input id="subject" class="input" type="text" placeholder="Kısa konu başlığı"/>
+      </div>
+
+      <div style="margin-top:14px">
+        <label for="message">Mesaj</label>
+        <textarea id="message" class="textarea" placeholder="Projenizi kısaca anlatın (bütçe, teslim tarihi, kapsam)..."></textarea>
+      </div>
+
+      <!-- Basit honeypot -->
+      <input type="text" id="website" style="position:absolute; left:-9999px" autocomplete="off" tabindex="-1" aria-hidden="true"/>
+
+      <div class="actions" style="margin-top:14px">
+        <button id="sendBtn" class="btn"><i class="fa-regular fa-paper-plane"></i>Gönder</button>
+        <button id="clearBtn" class="btn" type="button"><i class="fa-regular fa-eraser"></i>Temizle</button>
+      </div>
+      <p style="color:var(--muted); font-size:.9rem; margin-top:10px">
+        Form, e-posta uygulamanızla açılır. İsterseniz direkt <a href="mailto:m.taha.murat@gmail.com">e-posta</a> da gönderebilirsiniz.
+      </p>
+    </div>
+  </section>
+
+  <div id="toast" class="toast">Panoya kopyalandı</div>
+
+  <script>
+    // Kopyalama butonu
+    document.getElementById('copyBtn').addEventListener('click', ()=>{
+      const el = document.querySelector('#emailText');
+      if(!el) return;
+      const text = el.textContent.trim();
+      navigator.clipboard.writeText(text).then(()=>{
+        const toast = document.getElementById('toast');
+        toast.textContent = 'Panoya kopyalandı';
+        toast.classList.add('show');
+        setTimeout(()=>toast.classList.remove('show'), 1800);
+      });
+    });
+
+    // Formu mailto ile aç
+    function enc(s){ return encodeURIComponent(s).replace(/%20/g, '+'); }
+    document.getElementById('sendBtn').addEventListener('click', (e)=>{
+      e.preventDefault();
+      const hp = document.getElementById('website').value; if(hp) return;
+      const to = (document.getElementById('emailText').textContent || '').trim() || 'm.taha.murat@gmail.com';
+      const name = document.getElementById('name').value.trim();
+      const email= document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim() || 'Yeni iletişim mesajı';
+      const message = document.getElementById('message').value.trim();
+
+      if(!name || !email || !message){
+        const toast = document.getElementById('toast');
+        toast.textContent = 'Lütfen ad, e-posta ve mesajı doldurun.';
+        toast.classList.add('show');
+        setTimeout(()=>toast.classList.remove('show'), 2000);
+        return;
+      }
+
+      const body =
+        `Ad Soyad: ${name}%0D%0A` +
+        `E-posta: ${email}%0D%0A%0D%0A` +
+        `Mesaj:%0D%0A${encodeURIComponent(message)}`;
+
+      window.location.href = `mailto:${to}?subject=${enc(subject)}&body=${body}`;
+    });
+
+    // Temizle
+    document.getElementById('clearBtn').addEventListener('click', ()=>{
+      ['name','email','subject','message'].forEach(id=>document.getElementById(id).value='');
+    });
+  </script>
+</body>
+</html>

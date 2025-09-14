@@ -1,0 +1,140 @@
+<!-- hakkimda.html -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hakkımda - Taha</title>
+  <!-- Font Awesome (ikonlar) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root{
+      --bg:#0a192f; --card:#112240; --panel:#0f223e; --text:#ccd6f6;
+      --muted:#8892b0; --accent:#64ffda; --line:rgba(100,255,218,.12);
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:Arial, sans-serif; background:var(--bg); color:var(--text); line-height:1.65}
+    a{color:var(--accent); text-decoration:none; transition:color .3s} a:hover{color:#fff}
+
+    /* NAVBAR */
+    .navbar{display:flex; justify-content:space-between; align-items:center; padding:25px 40px;
+      background:#0a192f; position:sticky; top:0; z-index:20; border-bottom:1px solid var(--line)}
+    .logo{font-weight:700; font-size:1.1rem; color:var(--accent); letter-spacing:.3px; cursor:pointer; transition:opacity .3s}
+    .logo:hover{opacity:.85}
+    .menu{display:flex; gap:30px}
+    .menu a{color:#ccd6f6; font-weight:500; font-size:16px} .menu a:hover{color:var(--accent)}
+
+    /* HERO */
+    .hero{text-align:center; padding:72px 20px 36px}
+    .hero h1{font-size:2.4rem; margin:0 0 14px; color:var(--accent)}
+    .hero p{max-width:760px; margin:0 auto; color:var(--muted); font-size:1.06rem}
+
+    /* ANA İÇERİK */
+    .container{max-width:1100px; margin:36px auto 60px; padding:0 20px}
+    .panel{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:24px;
+      box-shadow:0 6px 18px rgba(0,0,0,.25)}
+    .panel h2{margin:0 0 12px; font-size:1.6rem}
+    .panel p{margin:10px 0; color:#a8b2d1}
+
+    /* HİZMETLER */
+    .services{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:14px}
+    @media (max-width:900px){ .services{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:600px){ .services{grid-template-columns:1fr} }
+    .service{background:#0f223e; border:1px solid var(--line); border-radius:10px; padding:16px; transition:transform .25s}
+    .service:hover{transform:translateY(-4px)}
+    .service h3{margin:0 0 6px; font-size:1.05rem; color:var(--accent)}
+    .service p{margin:0; color:#93a3c3; font-size:.95rem}
+
+    /* TIMELINE */
+    .timeline{display:flex; flex-direction:column; gap:18px; margin-top:16px; border-left:2px solid var(--accent); padding-left:20px}
+    .tl-item{position:relative}
+    .tl-item::before{
+      content:""; position:absolute; left:-11px; top:6px;
+      width:12px; height:12px; border-radius:50%;
+      background:var(--accent); box-shadow:0 0 0 3px rgba(100,255,218,.15);
+    }
+    .tl-year{font-weight:700; color:var(--accent); margin-bottom:4px}
+    .tl-desc{color:#a8b2d1; font-size:.95rem}
+
+    /* FOOTER */
+    .foot{max-width:1100px; margin:0 auto 50px; padding:0 20px; color:var(--muted); font-size:.9rem; text-align:center}
+    .foot a{font-weight:600}
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo"><strong>Web Designer & Developer</strong></div>
+    <div class="menu">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="hakkimda.html">Hakkımda</a>
+      <a href="projects.html">Projeler</a>
+      <a href="contact.html">İletişim</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Hakkımda</h1>
+    <p>Modern, hızlı ve kullanıcı dostu web siteleri geliştiriyorum. Hedefim; markaların ve bireylerin dijitalde daha profesyonel ve güvenilir görünmesini sağlamak.</p>
+  </section>
+
+  <main class="container">
+    <!-- BEN KİMİM -->
+    <section class="panel">
+      <h2>Ben Kimim?</h2>
+      <p>
+        Web geliştirme ve tasarım alanında çalışıyor ve sürekli deneyim kazanıyorum. Özellikle
+        <strong>HTML, CSS ve JavaScript</strong> üzerine yoğunlaşıyor; her projede modern tasarımı güçlü bir
+        altyapıyla birleştirerek kullanıcı dostu deneyimler oluşturuyorum.
+      </p>
+      <p>
+        Müşterilerime yalnızca estetik görünen değil, performansı ve kullanılabilirliği güçlü web siteleri sunuyorum.
+        İhtiyaca göre kurumsal web siteleri, portföy projeleri ve butik e-ticaret çözümleri geliştiriyorum.
+      </p>
+    </section>
+
+    <!-- HİZMETLER -->
+    <section class="panel">
+      <h2>Hizmetlerim</h2>
+      <div class="services">
+        <div class="service">
+          <h3>Kurumsal Web Tasarım</h3>
+          <p>Markanız için güven veren, responsive ve hızlı kurumsal siteler.</p>
+        </div>
+        <div class="service">
+          <h3>E-Ticaret</h3>
+          <p>Kullanıcı dostu arayüz, sade süreçler ve mobil uyumluluk.</p>
+        </div>
+        <div class="service">
+          <h3>Portföy & Landing Page</h3>
+          <p>Kişisel/proje tanıtımlarında net mesaj ve yüksek dönüşüm.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="panel">
+      <h2>Yolculuğum</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-year">2023</div>
+          <div class="tl-desc">Web geliştirme yolculuğuma başladım. HTML, CSS ve temel JavaScript üzerine yoğunlaştım.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2024</div>
+          <div class="tl-desc">İlk portföy ve küçük çaplı projelerimi tamamladım. Freelance olarak çalışmaya başladım.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2025</div>
+          <div class="tl-desc">Kurumsal web siteleri ve e-ticaret projelerine ağırlık vererek profesyonel portföyümü genişletiyorum.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="foot">
+    Daha fazlası için: <a href="projects.html">Projelerime göz atın</a>
+  </div>
+</body>
+</html>

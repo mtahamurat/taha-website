@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Developer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0a192f;
+      color: #ccd6f6;
+    }
+
+    a {
+      color: #64ffda;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    a:hover {
+      color: #fff;
+    }
+
+    /* Navbar */
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 40px;
+  background: #0a192f;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid rgba(100,255,218,.12); /* ✅ alt çizgi eklendi */
+}
+
+    
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #64ffda;
+    }
+    .menu {
+      display: flex;
+      gap: 30px;
+    }
+    .menu a {
+      color: #ccd6f6;
+      font-weight: 500;
+      font-size: 16px;
+    }
+    .menu a:hover {
+      color: #64ffda;
+    }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      background: #0a192f;
+      color: #ccd6f6;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #64ffda;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: #8892b0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease 0.3s;
+    }
+    .hero .btn {
+      background: #64ffda;
+      color: #0a192f;
+      border: none;
+      padding: 14px 36px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease 0.6s;
+    }
+    .hero .btn:hover {
+      background: #52e0c4;
+    }
+    .hero.show h1,
+    .hero.show p,
+    .hero.show .btn {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Projeler */
+    .section-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-left: 60px;
+      margin-bottom: 30px;
+    }
+    .projects {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: #112240;
+      border-radius: 10px;
+      width: 280px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #ccd6f6;
+    }
+    .card-desc {
+      font-size: 1rem;
+      color: #8892b0;
+    }
+    .card-btn {
+      align-self: flex-start;
+      background: transparent;
+      border: 1px solid #64ffda;
+      color: #64ffda;
+      padding: 8px 18px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .card-btn:hover {
+      background: #64ffda;
+      color: #0a192f;
+    }
+
+    @media (max-width: 900px) {
+      .section-title {
+        margin-left: 20px;
+      }
+    }
+    .logo{
+  font-weight:700;
+  font-size:1.1rem;
+  color:#64ffda;
+  letter-spacing:.3px;
+  cursor:pointer;
+  transition:opacity .3s ease;
+}
+
+.logo:hover{
+  opacity:.85;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+  <strong>Web Designer & Developer</strong>
+</div>
+
+    <div class="menu">
+      <a href="#home">Ana Sayfa</a>
+      <a href="about.html">Hakkımda</a>
+      <a href="projects.html">Projeler</a>
+      <a href="contact.html">İletişim</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+  <div class="hero-content">
+    <h1>Freelance Web Developer for HTML, CSS & JavaScript</h1>
+    <p>I create responsive, fast, and clean websites with a focus on user experience.</p>
+    <a href="projects.html" class="btn">View My Work</a>
+  </div>
+</section>
+
+
+
+ <!-- Projeler -->
+<h2 class="section-title" id="projects">Projeler</h2>
+<div class="projects">
+
+  <!-- Kart 1: Glocos Trading -->
+  <div class="card">
+    <img class="thumb" src="images/glocos.png" alt="Glocos Trading Websitesi" loading="lazy">
+    <div class="card-overlay">
+      <h3 class="card-title">Glocos Trading Websitesi</h3>
+      <p class="card-desc">Kurumsal Web Tasarım</p>
+      <a class="card-btn" href="https://www.glocostrading.com/" target="_blank" rel="noopener">Projeyi Gör</a>
+    </div>
+  </div>
+
+  <!-- Kart 2: Portföy -->
+  <div class="card">
+    <img class="thumb" src="images/home-bg.jpeg" alt="Portföy Sitesi Görseli" loading="lazy">
+    <div class="card-overlay">
+      <h3 class="card-title">Portföy Web Sitesi</h3>
+      <p class="card-desc">HTML • CSS • JavaScript</p>
+      <a class="card-btn" href="https://mtahamurat.github.io/taha-portfolio/" target="_blank" rel="noopener">Projeyi Gör</a>
+    </div>
+  </div>
+
+  <!-- Kart 3: Butik Mağaza -->
+  <div class="card">
+    <img class="thumb" src="https://picsum.photos/seed/p6/800/500" alt="Butik Mağaza Projesi" loading="lazy">
+    <div class="card-overlay">
+      <h3 class="card-title">Butik Mağaza</h3>
+      <p class="card-desc">HTML • CSS • JavaScript</p>
+      <a class="card-btn" href="#" target="_blank" rel="noopener">Projeyi Gör</a>
+    </div>
+  </div>
+
+</div>
+
+<style>
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 60px;
+  }
+
+  .card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 280px;
+    height: 200px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.25);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+  }
+
+  .thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .card:hover .thumb {
+    transform: scale(1.08);
+  }
+
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(10,25,47,0.9) 100%);
+    color: #ccd6f6;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .card:hover .card-overlay {
+    opacity: 1;
+  }
+
+  .card-title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #64ffda;
+  }
+
+  .card-desc {
+    margin: 4px 0 10px;
+    font-size: .9rem;
+    color: #8892b0;
+  }
+
+  .card-btn {
+    align-self: flex-start;
+    background: transparent;
+    border: 1px solid #64ffda;
+    color: #64ffda;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: .85rem;
+    transition: all 0.3s ease;
+  }
+
+  .card-btn:hover {
+    background: #64ffda;
+    color: #0a192f;
+  }
+</style>
+
+</div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('.hero').classList.add('show')
+    });
+  </script>
+</body>
+</html>
